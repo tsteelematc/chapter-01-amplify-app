@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MyComponent = (props) => {
+const MyComponent = ({foo}) => {
     return (
         <div
             style={styles.outsideDiv}
@@ -15,7 +15,7 @@ const MyComponent = (props) => {
             >
                 <li>Tom</li>
                 <li>Taylor</li>
-                <li>{props.foo}</li>
+                <li>{foo}</li>
             </ul>
         </div>
     )
