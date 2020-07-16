@@ -5,7 +5,7 @@ import MyComponent from './MyComponent';
 function App() {
   return (
     <div>
-      <MyComponent />
+      <MyComponent foo='bar' />
       <h1>Hello from AWS Amplify</h1>
       <AmplifySignOut />
     </div>
