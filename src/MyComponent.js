@@ -14,7 +14,7 @@ const MyComponent = (props) => {
             document.title = people.length
         }
         //, [] // Empty array means call it once ! ! !
-        , [people] // With our state property, it will get called each time the state property changes ! ! !
+        //, [people] // With our state property, it will get called each time the state property changes ! ! !
     );
 
     const handleHeadingClick = (e) => {
