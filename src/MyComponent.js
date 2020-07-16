@@ -1,8 +1,21 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 const MyComponent = (props) => {
 
-    const [people, setPeople] = useState(props.people);
+    const [people, setPeople] = useState([
+        'Tom'
+        , 'Taylor'
+        , props.foo
+        , ...props.people
+    ]);
+
+    useEffect(
+        () => {
+            document.title = people.length
+        }
+        //, [] // Empty array means call it once ! ! !
+        , [people] // With our state property, it will get called each time the state property changes ! ! !
+    );
 
     const handleHeadingClick = (e) => {
         //props.people.push('What ? ? ?');
@@ -26,9 +39,9 @@ const MyComponent = (props) => {
             <ul
                 style={styles.list}
             >
-                <li>Tom</li>
+                {/* <li>Tom</li>
                 <li>Taylor</li>
-                <li>{props.foo}</li>
+                <li>{props.foo}</li> */}
                 {/* {props.people.map(x => `<li>${x}</li>`)} */}
                 {/* {props.people.map(x => <li>{x}</li>)} */}
                 {people.map(x => <li>{x}</li>)}
